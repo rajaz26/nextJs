@@ -1,0 +1,73 @@
+
+.logsContainer{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.headingContainer{
+    display: flex;
+    padding: 15px;
+}
+
+.headingText{
+    font-size: 22px;
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    color: rgb(221, 214, 214);
+
+}
+
+.logsTableContainer{
+    display: flex;
+    padding: 0px 15px;
+   
+ 
+}
+
+.serverTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.serverTable td {
+    border: 1px solid #ddd; 
+    padding: 8px;
+    text-align: left;
+    font-family: var(--fontFamily);
+    font-weight: 300;
+    color: rgb(221, 214, 214);
+}
+
+.serverTable th {
+    border: 1px solid black; 
+    padding: 8px;
+    text-align: left;
+    background: linear-gradient(to right, var(--secondary) 0%, var(--secondsecondary) 100%);
+    font-family: var(--fontFamily);
+    font-weight: 500;
+    color: black;
+}
+
+.tableArrows{
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.tableColumn{
+    font-size: 16px;
+    text-align: right;
+
+
+}
+
+.tableArrow{
+    
+    border: none;
+}
+
+.serverTable th {
+    padding: 8px; 
+}
+

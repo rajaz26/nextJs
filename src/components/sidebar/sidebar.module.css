@@ -1,0 +1,50 @@
+.sidebarContainer{
+    /* position: fixed; */
+}
+.sidebarWrapper{
+    background-color: #181818;
+    color: white;
+    height: 100vh;
+    padding: 55px;
+}
+
+.logoWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.logoHeading{
+    font-family: var(--fontFamily);
+    font-size: 35px;
+    font-weight:500;
+}
+
+.optionsContainer{
+    margin: 100px 0px;
+}
+
+.optionSection{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0px;
+    padding: 20px 10px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+}
+
+.optionSection:hover{
+    background-color: rgb(77, 74, 74);
+    cursor: pointer;
+}
+
+.optionSection:hover .optionIcon{
+    color: var(--secondary)
+}
+
+.optionHeading{
+    font-family: var(--fontFamily);
+    font-weight: 400;
+}

@@ -1,0 +1,88 @@
+"use client"
+import React, { useState, useMemo, useEffect } from 'react';
+import styles from './serverlisttable.module.css';
+import TableHeader from '@/components/tablehead/TableHeader';
+import { TablePagination } from '@mui/material';
+
+const ServerListTable = ({ servers }) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(servers);
+  }, [servers]);
+
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
+
+  const requestSort = (key) => {
+    let direction = 'ascending';
+    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    } else if (sortConfig.key === key && sortConfig.direction === 'descending') {
+      direction = 'ascending';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const sortedData = useMemo(() => {
+    let sortableItems = [...data];
+    if (sortConfig.key !== null) {
+      sortableItems.sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return sortableItems;
+  }, [data, sortConfig]);
+
+  // Get the current page data
+  const paginatedData = useMemo(() => {
+    return sortedData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
+  }, [sortedData, page, rowsPerPage]);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  return (
+    <div className={styles.logsContainer}>
+      <div className={styles.logsWrapper}>
+        <div className={styles.headingContainer}>
+          <div className={styles.headingText}>Server Logs</div>
+        </div>
+        <TableHeader data={paginatedData} requestSort={requestSort} sortConfig={sortConfig} formatDate={formatDate} />
+        <TablePagination
+          component="div"
+          count={sortedData.length} 
+          page={page}
+          onPageChange={handleChangePage} 
+          rowsPerPage={rowsPerPage} 
+          onRowsPerPageChange={handleChangeRowsPerPage} 
+          style={{color:'white'}}
+        />
+      </div>
+    </div>
+  );
+}
+
+const formatDate = (dateString) => {
+  if (!dateString) return 'NULL';
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}-${month}-${year}`;
+}
+
+export default ServerListTable;

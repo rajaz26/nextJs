@@ -1,0 +1,108 @@
+.logsContainer {
+    margin-top: 10px;
+  }
+  
+  .headingContainer {
+    display: flex;
+    padding: 15px;
+  }
+  
+  .headingText {
+    font-size: 22px;
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    color: rgb(221, 214, 214);
+  }
+  
+  .logsTableContainer {
+    display: flex;
+  }
+  
+  .serverTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+.serverTable td, .serverTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-family: var(--fontFamily);
+  font-weight: 300;
+  color: black;
+  white-space: normal; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px; 
+  word-wrap: break-word;
+}
+
+  
+  
+  .serverTable th {
+    text-align: left;
+    background: #424242;
+    font-family: var(--fontFamily);
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(244, 235, 235);
+    max-width: 150px;
+    padding: 20px 10px;
+  }
+  
+  .serverTable td {
+    font-size: 16px;
+    font-weight: 400;
+    height: 40px;
+  }
+  
+  .serverTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .serverTable tr:nth-child(odd) {
+    background-color: white;
+  }
+  
+  .tableArrows {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tableColumn {
+    font-size: 16px;
+    text-align: right;
+    position: relative;
+  }
+  
+  .tableArrow {
+    border: none;
+  }
+  
+  .sortIcon {
+    color: var(--secondary) !important;
+  }
+  
+  .sortActive {
+    color: var(--secondary) !important;
+  }
+  
+  .resizeLine {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    cursor: col-resize;
+  }
+  
+  .tableColumnEdit{
+
+    justify-content: center;
+    align-items: center;
+    color: blue;
+  }
+  

@@ -1,0 +1,56 @@
+
+.statusContainer{
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.statusText{
+    font-size: 22px;
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    color:rgb(221, 214, 214);
+}
+.statusTabsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    
+}
+
+.statusTab{
+    background: linear-gradient(to right, var(--secondary) 0%, var(--secondsecondary) 100%);
+    height: 130px;
+    width: 250px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 15px;
+}
+
+.statusTabHeading{
+    font-size: 20px;
+    font-family: var(--fontFamily);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.statusTabSubtitle{
+    font-size: 15px;
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.statusDropdown{
+    background-color: rgb(221, 214, 214);
+    color: var(--primary);
+    font-family: var(--fontFamily);
+    
+
+}
+
+.homeWrapper{
+    margin-left: 30px;
+}
